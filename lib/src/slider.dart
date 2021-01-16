@@ -120,7 +120,7 @@ class SliderMenuContainer extends StatefulWidget {
 
   ///[Color] you can change appbar color by this parameter [appBarColor]
   ///
-  final Color appBarColor;
+  final List<Color> appBarColor;
 
   ///[EdgeInsets] you can change appBarPadding by this parameter [appBarPadding]
   ///
@@ -148,7 +148,7 @@ class SliderMenuContainer extends StatefulWidget {
     this.splashColor,
     this.isTitleCenter = true,
     this.trailing,
-    this.appBarColor = Colors.white,
+    this.appBarColor,
     this.appBarPadding,
     this.title,
     this.drawerIconSize = 27,
@@ -278,7 +278,16 @@ class SliderMenuContainerState extends State<SliderMenuContainer>
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              color: widget.appBarColor,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: <Color> [
+                        Colors.white,
+                        Colors.white
+                      ]
+                  )
+              ),
               child: Column(
                 children: <Widget>[
                   if (widget.hasAppBar)

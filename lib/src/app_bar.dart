@@ -3,7 +3,7 @@ import 'package:flutter_slider_drawer/src/slider_direction.dart';
 
 class SliderAppBar extends StatelessWidget {
   final EdgeInsets appBarPadding;
-  final Color appBarColor;
+  final List<Color> appBarColor;
   final Widget drawerIcon;
   final Color splashColor;
   final Color drawerIconColor;
@@ -38,7 +38,16 @@ class SliderAppBar extends StatelessWidget {
     return Container(
       height: appBarHeight,
       padding: appBarPadding ?? const EdgeInsets.only(top: 24),
-      color: appBarColor,
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: <Color> [
+                appBarColor[0],
+                appBarColor[1],
+              ]
+          )
+      ),
       child: Row(
         children: appBar(),
       ),

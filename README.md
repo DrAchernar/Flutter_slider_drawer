@@ -73,7 +73,8 @@ GlobalKey<SliderMenuContainerState> _key =
    @override
   Widget build(BuildContext context) {
   return SliderMenuContainer(
-              appBarColor: Colors.white,
+              //gradient
+              appBarColor: [Colors.white, Colors.black],
               key: _key,
               sliderMenuOpenSize: 200,
               sliderMenu: MenuWidget(
